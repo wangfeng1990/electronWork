@@ -1,5 +1,6 @@
 // {app}            Module to control application life.
 // {BrowserWindow}  Module to create native browser window.
+// const {app, BrowserWindow} = require('electron')
 const {app, BrowserWindow} = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -22,18 +23,18 @@ app.on('ready', function() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    minWidth: 500,
-    minHeight: 200,
-    acceptFirstMouse: true,
-    titleBarStyle: 'hidden',
-    frame: false
+    // minWidth: 500,
+    // minHeight: 200,
+    // acceptFirstMouse: true,
+    // titleBarStyle: 'hidden',
+    // frame: false
   });
 
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/app/index.html');
 
   // Open the DevTools.
-  //mainWindow.openDevTools();
+  mainWindow.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
